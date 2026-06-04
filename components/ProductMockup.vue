@@ -1,20 +1,14 @@
-<script setup lang="ts">
-import type { ProjectMockupType } from '../types/portfolio'
-
-withDefaults(
-  defineProps<{
-    type?: ProjectMockupType
-    title?: string
-  }>(),
-  {
-    type: 'payroll',
-    title: 'Dashboard Preview',
+<script setup>
+defineProps({
+  type: {
+    type: String,
+    default: 'payroll',
   },
-)
-
-const tableRows = Array.from({ length: 5 }, (_, index) => index)
-const productTiles = Array.from({ length: 4 }, (_, index) => index)
-const posMenuItems = Array.from({ length: 5 }, (_, index) => index)
+  title: {
+    type: String,
+    default: 'Dashboard Preview',
+  },
+})
 </script>
 
 <template>
@@ -33,14 +27,14 @@ const posMenuItems = Array.from({ length: 5 }, (_, index) => index)
           <div class="rounded-xl bg-slate-900 p-4 max-md:hidden">
             <div class="mb-3 text-xs font-black text-white">POS Menu</div>
             <div class="grid gap-2">
-              <div v-for="item in posMenuItems" :key="item" class="h-6 rounded-lg bg-white/10"></div>
+              <div v-for="i in 5" :key="i" class="h-6 rounded-lg bg-white/10"></div>
             </div>
           </div>
 
           <div class="grid grid-cols-2 gap-3">
             <div
-              v-for="tile in productTiles"
-              :key="tile"
+              v-for="i in 4"
+              :key="i"
               class="rounded-xl border border-slate-200 bg-white p-3"
             >
               <div class="mb-2 h-8 rounded-lg bg-blue-100"></div>
@@ -81,8 +75,8 @@ const posMenuItems = Array.from({ length: 5 }, (_, index) => index)
 
         <div class="grid gap-2">
           <div
-            v-for="row in tableRows"
-            :key="row"
+            v-for="i in 5"
+            :key="i"
             class="grid h-7 grid-cols-[1fr_80px_55px] items-center gap-3 rounded-lg bg-slate-100 px-3 max-md:grid-cols-[1fr_55px]"
           >
             <div class="h-2 rounded-full bg-slate-300"></div>

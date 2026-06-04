@@ -1,5 +1,5 @@
-<script setup lang="ts">
-const contactItems: string[] = [
+<script setup>
+const contactItems = [
   'Email: your.email@example.com',
   'Location: Philippines',
   'Available: Freelance / Project-based / Consulting',
@@ -38,35 +38,22 @@ const contactItems: string[] = [
           <form class="grid gap-3 rounded-card border border-white/15 bg-portfolio-bg/70 p-5 backdrop-blur-xl">
             <div class="grid gap-2">
               <label class="text-xs font-black text-violet-200">Your Name</label>
-              <input
-                class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40"
-                placeholder="Client name"
-              />
+              <input class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40" placeholder="Client name" />
             </div>
 
             <div class="grid gap-2">
               <label class="text-xs font-black text-violet-200">Email Address</label>
-              <input
-                type="email"
-                class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40"
-                placeholder="client@email.com"
-              />
+              <input type="email" class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40" placeholder="client@email.com" />
             </div>
 
             <div class="grid gap-2">
               <label class="text-xs font-black text-violet-200">Project Type</label>
-              <input
-                class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40"
-                placeholder="Payroll system, dashboard, automation..."
-              />
+              <input class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40" placeholder="Payroll system, dashboard, automation..." />
             </div>
 
             <div class="grid gap-2">
               <label class="text-xs font-black text-violet-200">Message</label>
-              <textarea
-                class="min-h-28 resize-y rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40"
-                placeholder="Tell me about your project..."
-              ></textarea>
+              <textarea class="min-h-28 resize-y rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40" placeholder="Tell me about your project..."></textarea>
             </div>
 
             <button type="button" class="btn-primary">

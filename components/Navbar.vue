@@ -1,10 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
-import type { NavLink } from '../types/portfolio'
 
-const isOpen = ref<boolean>(false)
+const isOpen = ref(false)
 
-const links: NavLink[] = [
+const links = [
   { label: '* Start />', href: '#start' },
   { label: '* Work />', href: '#work' },
   { label: '* Lab />', href: '#lab' },
@@ -12,7 +11,7 @@ const links: NavLink[] = [
   { label: '* Contact />', href: '#contact' },
 ]
 
-function closeMenu(): void {
+function closeMenu() {
   isOpen.value = false
 }
 </script>

@@ -1,24 +1,30 @@
-<script setup>
-const codeLines = [
-  "class YajBirel {",
-  "  // I build systems because I understand business workflows.",
-  "  constructor() {",
+<script setup lang="ts">
+const codeLines: string[] = [
+  'class YajBirel {',
+  '  // I build systems because I understand business workflows.',
+  '  constructor() {',
   "    this.role = 'Software Engineer';",
   "    this.focus = ['Payroll', 'Operations', 'Reports'];",
   "    this.stack = ['Laravel', 'Vue', 'MySQL'];",
-  "  }",
-  "  services() {",
+  '  }',
+  '  services() {',
   "    return ['Web Systems', 'Automation', 'Dashboards'];",
-  "  }",
-  "}",
+  '  }',
+  '}',
 ]
 
-const bullets = [
+const bullets: string[] = [
   'Full-stack Laravel and Vue development',
   'Payroll, attendance, employee, and reporting workflows',
   'Dashboards, PDF exports, Excel exports, and data processing',
   'System planning, authorization, validation, and deployment',
 ]
+
+function getCodeLineClass(line: string): string {
+  if (line.includes('//')) return 'text-portfolio-muted'
+  if (line.includes('this.') || line.includes('return')) return 'text-portfolio-green'
+  return 'text-portfolio-soft'
+}
 </script>
 
 <template>
@@ -50,13 +56,7 @@ const bullets = [
                 {{ String(index + 1).padStart(2, '0') }}
               </span>
 
-              <span
-                :class="{
-                  'text-portfolio-muted': line.includes('//'),
-                  'text-portfolio-green': line.includes('this.') || line.includes('return'),
-                  'text-portfolio-soft': !line.includes('//') && !line.includes('this.') && !line.includes('return'),
-                }"
-              >
+              <span :class="getCodeLineClass(line)">
                 {{ line }}
               </span>
             </div>

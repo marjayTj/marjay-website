@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import type { LabModule } from '../types/portfolio'
-
-defineProps<{
-  lab: LabModule
-}>()
+<script setup>
+defineProps({
+  lab: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
 <template>

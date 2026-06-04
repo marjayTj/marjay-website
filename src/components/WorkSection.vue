@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { projects } from '../data/projects'
 import ProjectCard from './ProjectCard.vue'
 </script>

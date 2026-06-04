@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { labs } from '../data/projects'
 import LabCard from './LabCard.vue'
 </script>

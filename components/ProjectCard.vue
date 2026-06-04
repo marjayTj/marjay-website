@@ -1,10 +1,12 @@
-<script setup lang="ts">
-import type { Project } from '../types/portfolio'
+<script setup>
 import ProductMockup from './ProductMockup.vue'
 
-defineProps<{
-  project: Project
-}>()
+defineProps({
+  project: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
 <template>

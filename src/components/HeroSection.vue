@@ -1,27 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import TerminalCard from './TerminalCard.vue'
 
-const tags = ['Laravel', 'Vue 3', 'MySQL', 'Payroll Systems', 'Business Automation']
+const tags: string[] = ['Laravel', 'Vue 3', 'MySQL', 'Payroll Systems', 'Business Automation']
 </script>
 
 <template>
   <section id="start" class="section-padding">
     <div class="portfolio-container grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
-        <div class="section-label font-light   ">Start /&gt;</div>
+        <div class="section-label">Start /&gt;</div>
 
-        <p class="mb-5 text-xl font-light text-portfolio-cyan">
+        <p class="mb-5 text-xl font-black text-portfolio-cyan">
           # Hi, I'm Marjay C. Bumalod
         </p>
 
-        <h3 class="hero-title mb-7">
+        <h1 class="hero-title mb-7">
           # I design and develop business systems
-        </h3>
+        </h1>
 
         <p class="mb-8 max-w-2xl text-lg leading-8 text-portfolio-muted">
-          Full-stack software engineer focused on Mobile, Web Development and AI Integration.
-          I build practical software solutions for businesses, including
-          dashboards, reports, employee workflows, and practical business automation.
+          Full-stack software engineer focused on Mobile, Web Development and AI Integration. I build practical software
+          solutions for businesses, including dashboards, reports, employee workflows, and practical business
+          automation.
         </p>
 
         <div class="mb-7 flex flex-wrap gap-3 max-md:grid">

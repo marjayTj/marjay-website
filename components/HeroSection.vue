@@ -1,25 +1,26 @@
-<script setup lang="ts">
+<script setup>
 import TerminalCard from './TerminalCard.vue'
 
-const tags: string[] = ['Laravel', 'Vue 3', 'MySQL', 'Payroll Systems', 'Business Automation']
+const tags = ['Laravel', 'Vue 3', 'MySQL', 'Payroll Systems', 'Business Automation']
 </script>
 
 <template>
   <section id="start" class="section-padding">
     <div class="portfolio-container grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
-        <div class="section-label">Start /&gt;</div>
+        <div class="section-label font-light   ">Start /&gt;</div>
 
-        <p class="mb-5 text-xl font-black text-portfolio-cyan">
-          # Hi, I'm Yaj Birel
+        <p class="mb-5 text-xl font-light text-portfolio-cyan">
+          # Hi, I'm Marjay C. Bumalod
         </p>
 
-        <h1 class="hero-title mb-7">
+        <h3 class="hero-title mb-7">
           # I design and develop business systems
-        </h1>
+        </h3>
 
         <p class="mb-8 max-w-2xl text-lg leading-8 text-portfolio-muted">
-          Full-stack software engineer focused on Laravel, Vue, payroll systems,
+          Full-stack software engineer focused on Mobile, Web Development and AI Integration.
+          I build practical software solutions for businesses, including
           dashboards, reports, employee workflows, and practical business automation.
         </p>
 
