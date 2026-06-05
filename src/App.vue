@@ -10,7 +10,7 @@ import ServicesSection from './components/ServicesSection.vue'
 </script>
 
 <template>
-  <div class="relative min-h-screen overflow-x-hidden bg-portfolio-bg text-portfolio-text sm:mx-8">
+  <div class="relative min-h-screen overflow-x-clip bg-portfolio-bg text-portfolio-text sm:mx-8">
 
     <Navbar />
 

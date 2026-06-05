@@ -23,35 +23,61 @@ const codeLines: string[] = [
   '    ]',
   '  }',
   '',
-  '   eligibility(){',
-  "    return [",
-  "      { examination: 'Civil Service Professional', dateExam: 'March 08, 2026', generalRating: '84.24%' },",
+  '  eligibility() {',
+  '    return [',
+  '      {',
+  "        examination: 'Civil Service Professional',",
+  "        dateExam: 'March 08, 2026',",
+  "        generalRating: '84.24%',",
+  '      },',
   '    ]',
   '  }',
   '',
-  '   workExperience(){',
-  "    return [",
-  "      { agency: 'Isabela State University - Ilagan', role: 'Part-time I.T Instructor', duration: '2025-now' },",
-  "      { company: 'The TileExpo Trading Inc', role: 'Chief of Staff/Business Development', duration: '2022-2025' },",
+  '  workExperience() {',
+  '    return [',
+  '      {',
+  "        agency: 'Isabela State University - Ilagan',",
+  "        role: 'Part-time I.T Instructor',",
+  "        duration: '2025-now',",
+  '      },',
+  '      {',
+  "        company: 'The TileExpo Trading Inc',",
+  "        role: 'Chief of Staff/Business Development',",
+  "        duration: '2022-2025',",
+  '      },',
   '    ]',
   '  }',
   '',
   '  skills() {',
   '    return {',
   '      "design": ["UI/UX Design", "Figma", "Photoshop"],',
-  '      "frontend": ["HTML", "CSS", "JavaScript", "Vue", "React", "Bootstrap", "Tailwind", "Vite"],',
+  '      "frontend": [',
+  '        "HTML",',
+  '        "CSS",',
+  '        "JavaScript",',
+  '        "Vue",',
+  '        "React",',
+  '        "Bootstrap",',
+  '        "Tailwind",',
+  '        "Vite",',
+  '      ],',
   '      "backend": ["PHP", "Laravel", "Node.js", "Python"],',
   '      "databaseAndCloud": ["MySQL", "MongoDB", "Firebase", "Supabase"],',
   '      "toolsAndWorkflow": ["Git", "GitHub", "Docker", "npm", "yarn", "pnpm"],',
-  '      "applicationPatterns": ["SPA", "WebSockets", "NativeScript", "WordPress"]',
+  '      "applicationPatterns": [',
+  '        "SPA",',
+  '        "WebSockets",',
+  '        "NativeScript",',
+  '        "WordPress",',
+  '      ],',
   '    }',
   '  }',
 
   '  wishlistSkills() {',
   '    return {',
-  '      "aiAndData": ["OpenClaw", "Python","R Programming"],',
+  '      "aiAndData": ["OpenClaw", "Python", "R Programming"],',
   '      "apiAndBackend": ["GraphQL", "Go", "Redis"],',
-  '      "infrastructure": ["Envoy Proxy", "NGINX", "Kubernetes", "CI/CD"]',
+  '      "infrastructure": ["Envoy Proxy", "NGINX", "Kubernetes", "CI/CD"],',
   '    }',
   '  }',
   '}',
@@ -155,34 +181,34 @@ function getCodeTokens(line: string): CodeToken[] {
         </p>
       </div>
 
-      <div class="terminal-card overflow-hidden bg-[#1E1E1E]">
-        <div class="flex min-h-12 items-center justify-between border-b border-[#2D2D2D] bg-[#181818] px-4">
+      <div class="terminal-card max-w-full overflow-hidden rounded-[18px] bg-[#1E1E1E] md:rounded-panel">
+        <div class="flex min-h-11 items-center justify-between border-b border-[#2D2D2D] bg-[#181818] px-3 md:min-h-12 md:px-4">
           <div class="flex items-center gap-2">
-            <span class="h-3 w-3 rounded-full bg-[#FF5F57]"></span>
-            <span class="h-3 w-3 rounded-full bg-[#FFBD2E]"></span>
-            <span class="h-3 w-3 rounded-full bg-[#28C840]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57] md:h-3 md:w-3"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FFBD2E] md:h-3 md:w-3"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#28C840] md:h-3 md:w-3"></span>
           </div>
 
           <div class="hidden text-xs font-semibold text-[#858585] sm:block">
             AboutCodeSection.vue - Visual Studio Code
           </div>
 
-          <div class="w-[60px]"></div>
+          <div class="w-[50px] md:w-[60px]"></div>
         </div>
 
         <div class="border-b border-[#2D2D2D] bg-[#252526]">
           <div
-            class="inline-flex min-h-10 items-center gap-2 border-r border-[#1E1E1E] bg-[#1E1E1E] px-4 text-sm font-semibold text-portfolio-soft">
+            class="inline-flex min-h-9 max-w-full items-center gap-2 border-r border-[#1E1E1E] bg-[#1E1E1E] px-3 text-xs font-semibold text-portfolio-soft md:min-h-10 md:px-4 md:text-sm">
             <span class="text-[#42B883]">Vue</span>
             <span>about.ts</span>
           </div>
         </div>
 
-        <div class="bg-[#1E1E1E] p-6 max-md:p-4">
-          <pre class="m-0 overflow-x-auto text-sm leading-7 max-md:text-[11px]"><code><span v-for="(line, index) in codeLines" :key="index"
-              class="grid grid-cols-[44px_1fr] gap-5 max-md:grid-cols-[30px_1fr] max-md:gap-3"><span
+        <div class="min-w-0 bg-[#1E1E1E] p-3 md:p-6">
+          <pre class="m-0 max-h-[520px] min-w-0 overflow-y-auto overflow-x-hidden pb-2 text-[11px] leading-6 md:max-h-none md:text-sm md:leading-7"><code><span v-for="(line, index) in codeLines" :key="index"
+              class="grid min-w-0 grid-cols-[30px_minmax(0,1fr)] items-start gap-3 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5"><span
                 class="select-none text-right text-[#858585]">{{ String(index + 1).padStart(2, '0') }}</span><span
-                class="whitespace-pre"><span v-for="(token, tokenIndex) in getCodeTokens(line)" :key="tokenIndex"
+                class="min-w-0 whitespace-pre-wrap break-words"><span v-for="(token, tokenIndex) in getCodeTokens(line)" :key="tokenIndex"
                   :class="token.className">{{ token.text }}</span></span></span></code></pre>
         </div>
       </div>
