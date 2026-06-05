@@ -15,15 +15,24 @@
 
     <div class="relative p-8 max-md:p-5">
       <div class="grid gap-3 text-lg text-portfolio-soft max-md:text-sm">
-        <div><span class="text-portfolio-purple">const</span> developer = {{ '{' }}</div>
-        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;name:</span> <span class="text-portfolio-green">'Marjay
-            C. Bumalod',</span></div>
-        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;stack:</span> <span class="text-portfolio-green">['Laravel',
-            'Vue', 'TypeScript'],</span></div>
+        <div>
+          <span class="text-portfolio-purple">const</span> developer = {{ '{' }}
+        </div>
+        <div>
+          <span class="text-portfolio-cyan">&nbsp;&nbsp;name:</span>
+          <span class="text-portfolio-green">'Marjay C. Bumalod',</span>
+        </div>
+        <div>
+          <span class="text-portfolio-cyan">&nbsp;&nbsp;stack:</span>
+          <span class="text-portfolio-green">['Laravel',</span>
+          <span class="text-portfolio-green">'Vue JS',</span>
+          <span class="text-portfolio-green">'React']</span>
+        </div>
         <div><span class="text-portfolio-cyan">&nbsp;&nbsp;focus:</span> <span class="text-portfolio-green">'Payroll +
             Business Automation',</span></div>
-        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;output:</span> <span class="text-portfolio-green">'Systems
-            that improve operations'</span></div>
+        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;output:</span> <span class="text-portfolio-green">'Improve
+            business
+            operations'</span></div>
         <div>{{ '}' }}</div>
       </div>
 
