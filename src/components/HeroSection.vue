@@ -1,29 +1,42 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import TerminalCard from './TerminalCard.vue'
+import Typed from 'typed.js'
 
 const tags: string[] = ['Laravel', 'Vue 3', 'MySQL', 'React', 'TypeScript', 'Tailwind CSS',]
-const rotatingWords: string[] = [
-  'payroll systems',
-  'POS systems',
-  'dashboards',
-  'web apps',
-  'automation tools',
-  'business systems',
-]
 
-const currentIndex = ref(0)
+const typedElement = ref<HTMLElement | null>(null)
+let typed: Typed | null = null
 
-let intervalId: ReturnType<typeof setInterval> | null = null
+const animatedText = () => {
+  if (!typedElement.value) return
+
+  typed = new Typed(typedElement.value, {
+    strings: [
+      'web apps',
+      'business systems',
+      'payroll systems',
+      'dashboards',
+      'automation tools',
+      'mobile apps',
+    ],
+    typeSpeed: 55,
+    backSpeed: 35,
+    backDelay: 900,
+    startDelay: 200,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+  })
+}
+
 
 onMounted(() => {
-  intervalId = setInterval(() => {
-    currentIndex.value = (currentIndex.value + 1) % rotatingWords.length
-  }, 3000)
+  animatedText()
 })
 
 onUnmounted(() => {
-  if (intervalId) clearInterval(intervalId)
+  typed?.destroy()
 })
 </script>
 
@@ -38,12 +51,10 @@ onUnmounted(() => {
         </p>
 
         <h1 class="hero-title mb-7">
-          # I build
-          <Transition name="fade" mode="out-in">
-            <span :key="rotatingWords[currentIndex]" class="inline-block text-portfolio-purple">
-              {{ rotatingWords[currentIndex] }}
-            </span>
-          </Transition>
+          $ I build
+          <span ref=typedElement class="inline-block text-portfolio-purple">
+
+          </span>
           </br />
           that simplify workflows
         </h1>

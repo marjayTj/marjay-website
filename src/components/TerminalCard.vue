@@ -28,34 +28,55 @@
           <span class="text-portfolio-green">'Vue JS',</span>
           <span class="text-portfolio-green">'React']</span>
         </div>
-        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;focus:</span> <span class="text-portfolio-green">'Payroll +
-            Business Automation',</span></div>
+        <div><span class="text-portfolio-cyan">&nbsp;&nbsp;focus:</span> <span class="text-portfolio-green">'
+            Business automation',</span></div>
         <div><span class="text-portfolio-cyan">&nbsp;&nbsp;output:</span> <span class="text-portfolio-green">'Improve
             business
             operations'</span></div>
         <div>{{ '}' }}</div>
       </div>
 
-      <div class="relative mt-10 grid h-[260px] place-items-center max-md:h-[220px]">
-        <div
-          class="absolute h-[150px] w-[150px] rounded-full border border-[#2B2B42] max-md:h-[115px] max-md:w-[115px]">
-        </div>
-        <div
-          class="absolute h-[230px] w-[230px] rounded-full border border-[#2B2B42] max-md:h-[175px] max-md:w-[175px]">
-        </div>
-        <div
-          class="absolute h-[310px] w-[310px] rounded-full border border-[#2B2B42] max-md:h-[235px] max-md:w-[235px]">
+      <div class="mt-8 rounded-[24px] border border-portfolio-line/80 bg-portfolio-panel/40 p-6">
+        <div class="mb-5 flex items-center justify-between">
+          <span class="text-xs font-black text-portfolio-muted">
+            system.flow
+          </span>
+
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-portfolio-line bg-portfolio-panelSoft px-3 py-1 text-[11px] font-black text-portfolio-green">
+            <span class="h-2 w-2 animate-pulse rounded-full bg-portfolio-green"></span>
+            API Online
+          </span>
         </div>
 
-        <div
-          class="z-10 grid h-20 w-20 place-items-center rounded-full bg-portfolio-purpleStrong font-black shadow-[0_0_40px_rgba(89,24,223,0.5)] max-md:h-16 max-md:w-16">
-          API
+        <div class="relative mx-auto h-[260px] max-w-[360px]">
+          <!-- Orbit circles -->
+          <div
+            class="absolute left-1/2 top-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-portfolio-borderStrong">
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-[170px] w-[170px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-portfolio-borderStrong">
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-portfolio-borderStrong">
+          </div>
+
+          <!-- Center API -->
+          <div
+            class="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-portfolio-purpleStrong text-lg font-black text-white shadow-[0_0_45px_rgba(89,24,223,0.55)]">
+            API
+          </div>
+
+          <!-- Nodes -->
+          <div class="system-node left-0 top-[92px]">Business Logic</div>
+          <div class="system-node right-0 top-[50px]">Reports</div>
+          <div class="system-node bottom-[55px] right-2">Users</div>
+          <div class="system-node bottom-[35px] left-[55px]">Rules</div>
+          <div class="system-node left-[135px] top-0">Auth</div>
+          <div class="system-node left-[130px] bottom-0">DB</div>
         </div>
 
-        <div class="node-pill left-5 top-20 max-md:left-0 max-md:top-16">Payroll</div>
-        <div class="node-pill right-10 top-8 max-md:right-0 max-md:top-5">Reports</div>
-        <div class="node-pill bottom-14 right-5 max-md:bottom-10 max-md:right-0">Users</div>
-        <div class="node-pill bottom-4 left-24 max-md:bottom-2 max-md:left-16">Rules</div>
+
       </div>
     </div>
   </div>
@@ -67,6 +88,15 @@
 }
 
 .node-pill::before {
+  content: "";
+  @apply mr-2 inline-block h-2 w-2 rounded-full bg-portfolio-cyan;
+}
+
+.system-node {
+  @apply absolute rounded-full border border-portfolio-line bg-portfolio-panelSoft px-3 py-1.5 text-xs font-black text-portfolio-soft shadow-card;
+}
+
+.system-node::before {
   content: "";
   @apply mr-2 inline-block h-2 w-2 rounded-full bg-portfolio-cyan;
 }
