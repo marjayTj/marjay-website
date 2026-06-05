@@ -6,6 +6,7 @@ const isOpen = ref<boolean>(false)
 
 const links: NavLink[] = [
   { label: '* Start />', href: '#start' },
+  { label: '* Services />', href: '#services' },
   { label: '* Work />', href: '#work' },
   { label: '* Lab />', href: '#lab' },
   { label: '* About />', href: '#about' },

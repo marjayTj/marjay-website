@@ -15,7 +15,6 @@ const animatedText = () => {
     strings: [
       'web apps',
       'business systems',
-      'payroll systems',
       'dashboards',
       'automation tools',
       'mobile apps',
