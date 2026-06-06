@@ -24,13 +24,11 @@ const codeLines: string[] = [
   '  }',
   '',
   '  eligibility() {',
-  '    return [',
-  '      {',
+  '    return {',
   "        examination: 'Civil Service Professional',",
   "        dateExam: 'March 08, 2026',",
   "        generalRating: '84.24%',",
-  '      },',
-  '    ]',
+  '    }',
   '  }',
   '',
   '  education() {',
@@ -97,6 +95,56 @@ const codeLines: string[] = [
   '  }',
   '}',
 ]
+
+const compactMobileArrays = new Set([
+  'focus',
+  'stack',
+  'frontend',
+  'applicationPatterns',
+])
+
+function getMobileCodeLines(lines: string[]): string[] {
+  const compactedLines: string[] = []
+  let index = 0
+
+  while (index < lines.length) {
+    const line = lines[index]
+    const arrayName = [...compactMobileArrays].find(
+      (name) =>
+        line.includes(`this.${name} = [`) ||
+        line.includes(`"${name}": [`),
+    )
+
+    if (!arrayName) {
+      compactedLines.push(line)
+      index += 1
+      continue
+    }
+
+    const values: string[] = []
+    let closingLineIndex = index + 1
+
+    while (closingLineIndex < lines.length) {
+      const trimmedLine = lines[closingLineIndex].trim()
+
+      if (trimmedLine === ']' || trimmedLine === '],') {
+        const opening = line.slice(0, line.lastIndexOf('[') + 1)
+        const closing = trimmedLine
+        compactedLines.push(`${opening}${values.join(', ')}${closing}`)
+        break
+      }
+
+      values.push(trimmedLine.replace(/,$/, ''))
+      closingLineIndex += 1
+    }
+
+    index = closingLineIndex + 1
+  }
+
+  return compactedLines
+}
+
+const mobileCodeLines = getMobileCodeLines(codeLines)
 
 type CodeToken = {
   text: string
@@ -221,9 +269,16 @@ function getCodeTokens(line: string): CodeToken[] {
         </div>
 
         <div class="min-w-0 bg-[#1E1E1E] p-3 md:p-6">
-          <pre
-            class="m-0 max-h-[520px] min-w-0 overflow-y-auto overflow-x-hidden pb-2 text-[11px] leading-6 md:max-h-none md:text-sm md:leading-7"><code><span v-for="(line, index) in codeLines" :key="index"
-              class="grid min-w-0 grid-cols-[30px_minmax(0,1fr)] items-start gap-3 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5"><span
+          <pre class="m-0 max-h-[520px] min-w-0 overflow-auto pb-2 text-[11px] leading-6 md:hidden"><code class="inline-block min-w-full"><span
+              v-for="(line, index) in mobileCodeLines" :key="index"
+              class="grid w-max min-w-full grid-cols-[30px_max-content] items-start gap-3"><span
+                class="select-none text-right text-[#858585]">{{ String(index + 1).padStart(2, '0') }}</span><span
+                class="whitespace-pre"><span v-for="(token, tokenIndex) in getCodeTokens(line)" :key="tokenIndex"
+                  :class="token.className">{{ token.text }}</span></span></span></code></pre>
+
+          <pre class="m-0 hidden min-w-0 overflow-y-auto overflow-x-hidden pb-2 text-sm leading-7 md:block"><code><span
+              v-for="(line, index) in codeLines" :key="index"
+              class="grid min-w-0 grid-cols-[44px_minmax(0,1fr)] items-start gap-5"><span
                 class="select-none text-right text-[#858585]">{{ String(index + 1).padStart(2, '0') }}</span><span
                 class="min-w-0 whitespace-pre-wrap break-words"><span v-for="(token, tokenIndex) in getCodeTokens(line)" :key="tokenIndex"
                   :class="token.className">{{ token.text }}</span></span></span></code></pre>
