@@ -16,11 +16,11 @@ const isHomePage = computed(() => route.name === 'home')
 
     <FooterSection />
 
-    <RouterLink :to="{ path: '/', hash: '#contact' }"
+    <!-- <RouterLink :to="{ path: '/', hash: '#contact' }"
       class="fixed bottom-3 left-3 right-3 z-40 rounded-[20px] border border-portfolio-line bg-portfolio-bg/85 p-2 shadow-portfolio backdrop-blur-xl md:hidden">
-      <!-- <span class="btn-primary w-full">
+      <span class="btn-primary w-full">
         {{ isHomePage ? 'Discuss a Project' : 'Contact me' }} &rarr;
-      </span> -->
-    </RouterLink>
+      </span>
+    </RouterLink> -->
   </div>
 </template>
