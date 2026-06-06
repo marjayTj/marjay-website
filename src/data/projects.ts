@@ -1,6 +1,7 @@
 import type { LabModule, Project, ProjectCategory } from "../types/portfolio";
 import payrollDashboardImage from "../images/projects/payroll-management-system.png";
 import attendanceReviewImage from "../images/projects/attendance-review.png";
+import payrollReportImage from "../images/projects/payroll-report.png";
 
 export const projects: Project[] = [
   {
@@ -37,7 +38,7 @@ export const projects: Project[] = [
       {
         id: 3,
         title: "Payroll Reports",
-        image: "/images/projects/payroll-management-system.svg",
+        image: payrollReportImage,
         alt: "Placeholder preview of payroll reports and exports",
       },
     ],
