@@ -1,0 +1,47 @@
+<script setup lang="ts">
+import type { Project } from '@/types/portfolio'
+import ProductMockup from '@/components/ProductMockup.vue'
+import ProjectTechBadges from './ProjectTechBadges.vue'
+
+defineProps<{
+  project: Project
+}>()
+</script>
+
+<template>
+  <article
+    class="portfolio-card grid gap-7 p-5 transition hover:-translate-y-1 hover:border-portfolio-purple/80 lg:grid-cols-[1.05fr_0.95fr]">
+    <div class="grid content-center p-5 max-md:p-2">
+      <div class="mb-4 flex items-center gap-3 text-sm font-black">
+        <span class="text-portfolio-purple">{{ project.number }}</span>
+        <span class="text-portfolio-muted">{{ project.category }}</span>
+      </div>
+
+      <h3 class="mb-5 text-[clamp(2rem,4vw,3.25rem)] font-black leading-none tracking-[-0.06em]">
+        {{ project.title }}
+      </h3>
+
+      <p class="mb-5 max-w-xl leading-7 text-portfolio-muted">
+        {{ project.description }}
+      </p>
+
+      <ul class="mb-6 grid gap-2 text-sm leading-6 text-portfolio-soft">
+        <li v-for="feature in project.features" :key="feature" class="flex gap-3">
+          <span class="text-portfolio-cyan" aria-hidden="true">+</span>
+          <span>{{ feature }}</span>
+        </li>
+      </ul>
+
+      <ProjectTechBadges :items="project.techStack" class="mb-6" />
+
+      <RouterLink :to="`/work/${project.slug}`"
+        class="w-fit text-sm font-black text-portfolio-cyan transition hover:text-white">
+        View case study &rarr;
+      </RouterLink>
+    </div>
+
+    <div class="rounded-card border border-portfolio-borderStrong bg-portfolio-codePanel p-4">
+      <ProductMockup :type="project.mockup" :title="project.mockupTitle" />
+    </div>
+  </article>
+</template>

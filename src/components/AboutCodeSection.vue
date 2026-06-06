@@ -33,6 +33,21 @@ const codeLines: string[] = [
   '    ]',
   '  }',
   '',
+  '  education() {',
+  '    return [',
+  '      {',
+  "        school: 'Isabela State University - Cauayan',",
+  "        graduateStudy: 'Master in Information Technolgoy (MIT)',",
+  "        completed: true,",
+  '      },',
+  '      {',
+  "        school: 'Isabela State University - Echague',",
+  "        graduateStudy: 'Master in Business Administration (MBA)',",
+  "        completed: false,",
+  '      },',
+  '    ]',
+  '  }',
+  '',
   '  workExperience() {',
   '    return [',
   '      {',
@@ -63,7 +78,7 @@ const codeLines: string[] = [
   '      ],',
   '      "backend": ["PHP", "Laravel", "Node.js", "Python"],',
   '      "databaseAndCloud": ["MySQL", "MongoDB", "Firebase", "Supabase"],',
-  '      "toolsAndWorkflow": ["Git", "GitHub", "Docker", "npm", "yarn", "pnpm"],',
+  '      "toolsAndWorkflow": ["Git", "GitHub",  "npm", "yarn", "pnpm"],',
   '      "applicationPatterns": [',
   '        "SPA",',
   '        "WebSockets",',
@@ -77,7 +92,7 @@ const codeLines: string[] = [
   '    return {',
   '      "aiAndData": ["OpenClaw", "Python", "R Programming"],',
   '      "apiAndBackend": ["GraphQL", "Go", "Redis"],',
-  '      "infrastructure": ["Envoy Proxy", "NGINX", "Kubernetes", "CI/CD"],',
+  '      "infrastructure": ["Envoy Proxy", "NGINX", "Docker","Kubernetes", "CI/CD"],',
   '    }',
   '  }',
   '}',
@@ -176,13 +191,14 @@ function getCodeTokens(line: string): CodeToken[] {
         </div>
 
         <p class="text-lg leading-8 text-portfolio-muted">
-          My goal is to position myself as a software engineer who understands
-          business operations, compliance, and emphatizing users.
+          I design software with empathy for users, aligning business workflows,
+          usability, and clean interfaces into practical digital systems.
         </p>
       </div>
 
       <div class="terminal-card max-w-full overflow-hidden rounded-[18px] bg-[#1E1E1E] md:rounded-panel">
-        <div class="flex min-h-11 items-center justify-between border-b border-[#2D2D2D] bg-[#181818] px-3 md:min-h-12 md:px-4">
+        <div
+          class="flex min-h-11 items-center justify-between border-b border-[#2D2D2D] bg-[#181818] px-3 md:min-h-12 md:px-4">
           <div class="flex items-center gap-2">
             <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57] md:h-3 md:w-3"></span>
             <span class="h-2.5 w-2.5 rounded-full bg-[#FFBD2E] md:h-3 md:w-3"></span>
@@ -205,7 +221,8 @@ function getCodeTokens(line: string): CodeToken[] {
         </div>
 
         <div class="min-w-0 bg-[#1E1E1E] p-3 md:p-6">
-          <pre class="m-0 max-h-[520px] min-w-0 overflow-y-auto overflow-x-hidden pb-2 text-[11px] leading-6 md:max-h-none md:text-sm md:leading-7"><code><span v-for="(line, index) in codeLines" :key="index"
+          <pre
+            class="m-0 max-h-[520px] min-w-0 overflow-y-auto overflow-x-hidden pb-2 text-[11px] leading-6 md:max-h-none md:text-sm md:leading-7"><code><span v-for="(line, index) in codeLines" :key="index"
               class="grid min-w-0 grid-cols-[30px_minmax(0,1fr)] items-start gap-3 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5"><span
                 class="select-none text-right text-[#858585]">{{ String(index + 1).padStart(2, '0') }}</span><span
                 class="min-w-0 whitespace-pre-wrap break-words"><span v-for="(token, tokenIndex) in getCodeTokens(line)" :key="tokenIndex"
