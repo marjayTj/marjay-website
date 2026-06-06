@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import type { ProjectScreenshot } from '../../types/portfolio'
 import ImageViewer from './ImageViewer.vue'
+import ProjectScreenshotFrame from './ProjectScreenshotFrame.vue'
 
 const props = defineProps<{
   images: ProjectScreenshot[]
@@ -38,9 +39,7 @@ function showNext(): void {
         <div class="section-label">Gallery /&gt;</div>
         <h2 class="section-title mb-6">Project Screenshots</h2>
         <p class="leading-8 text-portfolio-muted">
-          Click any image to open the project image viewer. This is where you can
-          show multiple real screenshots of the system, such as dashboard,
-          reports, forms, and mobile views.
+          Click any image to open the project image viewer.
         </p>
       </div>
 
@@ -49,9 +48,9 @@ function showNext(): void {
           class="portfolio-card group overflow-hidden text-left transition hover:-translate-y-1 hover:border-portfolio-purple/70"
           :class="{ 'md:col-span-2': image.isFeatured }" :aria-label="`Open ${image.title} screenshot`"
           @click="openViewer(index)">
-          <div class="overflow-hidden border-b border-portfolio-line bg-portfolio-codePanel">
-            <img :src="image.image" :alt="image.alt"
-              class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+          <div
+            class="overflow-hidden border-b border-portfolio-line bg-[radial-gradient(circle_at_75%_20%,rgba(124,58,237,0.14),transparent_40%),linear-gradient(145deg,#151522_0%,#0e0e18_70%)] p-4 sm:p-6">
+            <ProjectScreenshotFrame :image="image.image" :alt="image.alt" />
           </div>
           <div class="flex items-center justify-between gap-4 p-5">
             <span class="font-black">{{ image.title }}</span>

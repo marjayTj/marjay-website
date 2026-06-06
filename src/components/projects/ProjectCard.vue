@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Project } from '@/types/portfolio'
-import ProductMockup from '@/components/ProductMockup.vue'
+import ProjectScreenshotFrame from './ProjectScreenshotFrame.vue'
 import ProjectTechBadges from './ProjectTechBadges.vue'
 
-defineProps<{
+const props = defineProps<{
   project: Project
 }>()
+
+const preview = computed(
+  () =>
+    props.project.screenshots.find((screenshot) => screenshot.isFeatured) ??
+    props.project.screenshots[0],
+)
 </script>
 
 <template>
@@ -40,8 +47,14 @@ defineProps<{
       </RouterLink>
     </div>
 
-    <div class="rounded-card border border-portfolio-borderStrong bg-portfolio-codePanel p-4">
-      <ProductMockup :type="project.mockup" :title="project.mockupTitle" />
+    <div
+      class="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-card border border-portfolio-borderStrong bg-[radial-gradient(circle_at_75%_20%,rgba(124,58,237,0.18),transparent_40%),linear-gradient(145deg,#151522_0%,#0e0e18_70%)] p-5 sm:p-7 lg:min-h-[420px]"
+    >
+      <ProjectScreenshotFrame
+        v-if="preview"
+        :image="preview.image"
+        :alt="preview.alt"
+      />
     </div>
   </article>
 </template>
