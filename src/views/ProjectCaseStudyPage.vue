@@ -17,7 +17,6 @@ const project = computed(() => getProjectBySlug(String(route.params.slug)))
   <main v-if="project">
     <ProjectHero :project="project" />
     <ProjectMetaCards :project="project" />
-    <ProjectGallery :images="project.screenshots" />
 
     <section class="pb-12">
       <div class="portfolio-container grid gap-6 lg:grid-cols-2">
@@ -25,8 +24,12 @@ const project = computed(() => getProjectBySlug(String(route.params.slug)))
         <ProjectInfoSection label="02" title="Solution" :content="project.solution" />
         <ProjectListSection label="03" title="Core Modules" :items="project.coreModules" />
         <ProjectListSection label="04" title="Business Value" :items="project.businessValue" />
+        <ProjectListSection label="05" title="Designed For" :items="project.designedFor" />
+        <ProjectListSection label="06" title="Workflow" :items="project.workflow" />
       </div>
     </section>
+
+    <ProjectGallery :images="project.screenshots" />
 
     <ProjectCTA />
   </main>

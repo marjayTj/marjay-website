@@ -2,6 +2,9 @@ import type { LabModule, Project, ProjectCategory } from "../types/portfolio";
 import payrollDashboardImage from "../images/projects/payroll-management-system.png";
 import attendanceReviewImage from "../images/projects/attendance-review.png";
 import payrollReportImage from "../images/projects/payroll-report.png";
+import employeeManagementImage from "../images/projects/employee-management.png";
+import payrollComputationImage from "../images/projects/payroll-computation.png";
+import payslipImage from "../images/projects/payslip.png";
 
 export const projects: Project[] = [
   {
@@ -10,16 +13,32 @@ export const projects: Project[] = [
     number: "00",
     title: "Payroll Management System",
     description:
-      "A complete payroll platform for employee records, attendance review, payroll processing, approvals, payslip generation, reports, and role-based access.",
-    category: "Business Systems",
-    projectType: "Business System",
-    role: "Full-stack Developer",
-    output: "Web App Prototype",
-    techStack: ["Laravel", "Vue 3", "MySQL", "Payroll", "PDF / Excel"],
+      "A complete web-based payroll system built for employee management, attendance processing, payroll computation, approval workflows, payslip generation, and statutory reports.",
+    category: "Web Apps",
+    projectType: "Web Application",
+    role: "Full-stack Developer, System Planning, UI/UX design, Backend logic, Payroll workflow implementation, Report generation",
+    output: "Web Application",
+    techStack: [
+      "Laravel",
+      "Vue 3",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "MySQL",
+      "Dompdf",
+      "Sheet JS",
+      "TCPDF",
+      "pdfmake",
+      "Axios",
+    ],
     features: [
       "Employee and non-employee payroll workflow",
-      "Attendance cutoff review and approval process",
-      "Payslip, PDF, Excel, and payroll reports",
+      "Attendance import, review, and cutoff-based locking",
+      "Payroll computation with earnings, deductions, tax, and government contributions",
+      "Payslip preview, PDF download, and email sending",
+      "Approval workflow for payroll runs and adjustments",
+      "Reports for payroll register, SSS, PhilHealth, Pag-IBIG, tax, 13th month, and BIR forms",
+      "Role-based access control for admin, payroll staff, and approvers",
     ],
     screenshots: [
       {
@@ -41,23 +60,58 @@ export const projects: Project[] = [
         image: payrollReportImage,
         alt: "Placeholder preview of payroll reports and exports",
       },
+      {
+        id: 4,
+        title: "Employee Management",
+        image: employeeManagementImage,
+        alt: "Placeholder preview of employee management screen",
+      },
+      {
+        id: 5,
+        title: "Payroll Computation",
+        image: payrollComputationImage,
+        alt: "Placeholder preview of payroll computation details",
+      },
+      {
+        id: 6,
+        title: "Payslip Preview",
+        image: payslipImage,
+        alt: "Placeholder preview of payslip preview screen",
+      },
     ],
     problem:
       "Manual payroll work can be time-consuming, error-prone, and difficult to audit when attendance, employee records, approvals, and payroll reports are handled in separate files.",
     solution:
       "The system centralizes employee data, attendance review, payroll computation, approvals, payslips, and report generation into one structured workflow.",
     coreModules: [
-      "Employee and non-employee record management",
+      "Employee Management",
       "Attendance cutoff review and correction workflow",
-      "Payroll processing with approval stages",
-      "Payslip preview, PDF generation, and email support",
-      "Reports for payroll, BIR forms, and employee summaries",
+      "Payroll Processing",
+      "Non-Employee Payment",
+      "Payslip",
+      "Reports",
+      "Approval",
+      "Settings",
+      "User Management",
     ],
     businessValue: [
       "Reduces manual computation and duplicate encoding",
       "Improves payroll accuracy and accountability",
       "Provides clear reports for management and payroll staff",
       "Supports role-based access for admin, approver, and payroll staff",
+    ],
+    designedFor: [
+      "Admin - Manages users, system settings, permissions, and company setup.",
+      "Payroll Staff - Processes attendance, payroll runs, payslips, and reports.",
+      "Approver - Reviews and approves payroll runs and payroll adjustments.",
+    ],
+    workflow: [
+      "Employee Setup",
+      "Attendance Review",
+      "Payroll Computation",
+      "Approval",
+      "Payslip Generation",
+      "Reports",
     ],
     isFeatured: true,
     mockup: "payroll",
@@ -70,7 +124,7 @@ export const projects: Project[] = [
     title: "Offline POS and Inventory",
     description:
       "An offline-ready selling and inventory system for small business transactions, item lookup, barcode-assisted workflows, and stock monitoring.",
-    category: "Business Systems",
+    category: "Mobile Apps",
     projectType: "Business System",
     role: "Full-stack Developer",
     output: "Mobile App Prototype",
@@ -117,6 +171,8 @@ export const projects: Project[] = [
       "Speeds up item lookup and checkout",
       "Gives owners a clearer view of transactions and inventory",
     ],
+    designedFor: [],
+    workflow: [],
     isFeatured: true,
     mockup: "pos",
     mockupTitle: "POS Menu",
@@ -175,6 +231,8 @@ export const projects: Project[] = [
       "Highlights in-demand skills and industries",
       "Turns job listing data into presentation-ready insights",
     ],
+    designedFor: [],
+    workflow: [],
     isFeatured: true,
     mockup: "map",
     mockupTitle: "Job Demand Map",
@@ -183,10 +241,10 @@ export const projects: Project[] = [
 
 export const projectCategories: Array<"All Projects" | ProjectCategory> = [
   "All Projects",
-  "Business Systems",
   "Automation",
   "Analytics",
   "Web Apps",
+  "Mobile Apps",
 ];
 
 export function getProjects(): Project[] {
