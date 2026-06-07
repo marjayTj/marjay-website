@@ -5,13 +5,13 @@ A responsive software engineer portfolio prototype built with Vue 3, Vite, and T
 ## Sections
 
 - Navbar with mobile menu
-- Hero / Start section
-- Work / Projects with product mockups
-- Lab / Reusable modules
+- Hero 
+- Services
+- Processes
+- Work / Reusable modules
 - About / Code-style profile
 - Contact / Inquiry section
 - Footer
-- Sticky mobile CTA button
 
 ## Setup
 
