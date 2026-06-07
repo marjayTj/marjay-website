@@ -1,6 +1,6 @@
 # Vue 3 + Tailwind Portfolio Prototype
 
-A responsive software engineer portfolio prototype built with Vue 3, Vite, and Tailwind CSS.
+A responsive software engineer portfolio prototype built with Vue 3, Vite, Tailwind CSS, and TypeScript.
 
 ## Sections
 
